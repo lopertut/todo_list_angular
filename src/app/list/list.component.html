@@ -1,0 +1,6 @@
+<app-list (selected_filter)="GetData('kdsjf')"></app-list>
+<ul>
+	@for (task of tasks;track task) {
+	<li>{{task}} {{localstorage.getItem(task)}}</li>
+	}
+</ul>

@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { InputComponent } from './input/input.component';
+import { ListComponent } from './list/list.component';
+import { FilterComponent } from './filter/filter.component';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+	selector: 'app-root',
+	imports: [InputComponent, ListComponent, FilterComponent],
+	templateUrl: './app.component.html',
+	styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'todo_list_angular';
+
 }
