@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
 	templateUrl: './input.component.html',
 	styleUrl: './input.component.css',
 })
-export class InputComponent {
-
+export class InputComponent{
 	add_task() {
-		const task = (<HTMLInputElement>document.getElementById("input")).value;
-		localStorage.setItem(task, "incomplete");
+		const input = (<HTMLInputElement>document.getElementById("input")).value;
+		localStorage.setItem(input, "incomplete");
 	}
 }

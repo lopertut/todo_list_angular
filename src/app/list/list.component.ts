@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
 	selector: 'app-list',
@@ -6,13 +6,14 @@ import { Component } from '@angular/core';
 	templateUrl: './list.component.html',
 	styleUrl: './list.component.css',
 })
-export class ListComponent {
+export class ListComponent{
 	tasks = Object.keys(localStorage);
 	localstorage = localStorage;
-	filter: string = "";
+	
+	// filter: string = "";
 
-	GetData(selected_filter: string) {
-		this.filter = selected_filter;
-		console.log(this.filter);
-	}
+	// GetData(selected_filter: string) {
+	// 	this.filter = selected_filter;
+	// 	console.log(this.filter);
+	// }
 }
