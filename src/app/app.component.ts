@@ -10,5 +10,18 @@ import { FilterComponent } from './filter/filter.component';
 	styleUrl: './app.component.css',
 })
 export class AppComponent {
+	filter: string = "";
+	updated: boolean = false;
 
+	GetUpadate(update: boolean) {
+		this.updated = update;
+
+		setTimeout(() => {
+			this.updated = false;	
+		}, 0);
+	}
+
+	GetData(selected_filter: string) {
+		this.filter = selected_filter;
+	}
 }

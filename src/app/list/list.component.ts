@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
 	selector: 'app-list',
@@ -10,10 +10,19 @@ export class ListComponent{
 	tasks = Object.keys(localStorage);
 	localstorage = localStorage;
 	
-	// filter: string = "";
+	@Input() update: boolean = false; 
 
-	// GetData(selected_filter: string) {
-	// 	this.filter = selected_filter;
-	// 	console.log(this.filter);
-	// }
+	ngOnChanges() {
+		this.tasks = Object.keys(this.localstorage);
+	}
+
+	changeStatus(task: string) {
+		const checkBox = (<HTMLInputElement>document.getElementById("change"));
+
+		if (checkBox.checked) {
+			this.localstorage.setItem(task, "complete");
+		} else {
+			this.localstorage.setItem(task, "incomplete");
+		}
+	}
 }
